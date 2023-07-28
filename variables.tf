@@ -1,4 +1,23 @@
 ################################################################################
+# Custom Storage Backend
+################################################################################
+
+variable "backend_region" {
+  description = "Region of the custom storage backend"
+  type        = string
+}
+
+variable "backend_access_key" {
+  description = "Access Key for the custom storage backend"
+  type        = string
+}
+
+variable "backend_secret_key" {
+  description = "Secret key for the custom storage backend"
+  type        = string
+}
+
+################################################################################
 # VPC
 ################################################################################
 
@@ -17,7 +36,7 @@ variable "cidr" {
 variable "azs" {
   description = "A list of availability zones names or ids in the region. Depending on region"
   type        = list(string)
-  default     = ["eu-central-1a","eu-central-1b"]
+  default     = ["eu-central-1a", "eu-central-1b"]
 }
 
 variable "create_vpc" {
@@ -65,7 +84,7 @@ variable "use_ipam_pool" {
 variable "ipv4_ipam_pool_id" {
   description = "(Optional) The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR"
   type        = string
-  default     = "" 
+  default     = ""
 }
 
 variable "ipv4_netmask_length" {
@@ -169,17 +188,17 @@ variable "dhcp_options_tags" {
 variable "public_subnets" {
   description = "A list of public subnets inside the VPC"
   type        = list(string)
-  default = ["10.0.0.0/24","10.0.1.0/24"]
+  default     = ["10.0.0.0/24", "10.0.1.0/24"]
 }
 variable "public_subnet_netmask_ipam" {
   description = "Netmask for the public subnets from IPAM"
   type        = number
-  default = 28 
+  default     = 28
 }
 variable "public_subnet_amount_ipam" {
   description = "Amount of public subnets from IPAM"
   type        = number
-  default = 1
+  default     = 1
 }
 
 variable "public_subnet_assign_ipv6_address_on_creation" {
@@ -313,17 +332,17 @@ variable "public_acl_tags" {
 variable "private_subnets" {
   description = "A list of private subnets inside the VPC"
   type        = list(string)
-  default = ["10.0.100.0/24","10.0.101.0/24"]
+  default     = ["10.0.100.0/24", "10.0.101.0/24"]
 }
 variable "private_subnet_netmask_ipam" {
   description = "Netmask for the private subnets from IPAM"
   type        = number
-  default = 28
+  default     = 28
 }
 variable "private_subnet_amount_ipam" {
   description = "Amount of private subnets from IPAM"
   type        = number
-  default = 1
+  default     = 1
 }
 
 variable "private_subnet_assign_ipv6_address_on_creation" {
