@@ -2,18 +2,22 @@
 # Custom Storage Backend
 ################################################################################
 
+variable "backend_bucket_name" {
+  description = "Bucket Name for storing state file."
+  type = string
+}
 variable "backend_region" {
-  description = "Region of the custom storage backend"
+  description = "Region of the custom storage backend."
   type        = string
 }
 
 variable "backend_access_key" {
-  description = "Access Key for the custom storage backend"
+  description = "Access Key for the custom storage backend."
   type        = string
 }
 
 variable "backend_secret_key" {
-  description = "Secret key for the custom storage backend"
+  description = "Secret key for the custom storage backend."
   type        = string
 }
 
