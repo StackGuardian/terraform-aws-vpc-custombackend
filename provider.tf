@@ -1,4 +1,6 @@
 provider "aws" {
-  region = substr(var.azs[0], 0, length(var.azs[0]) - 1)
+  region     = var.backend_region
+  access_key = var.backend_access_key
+  secret_key = var.backend_access_key
 }
 
