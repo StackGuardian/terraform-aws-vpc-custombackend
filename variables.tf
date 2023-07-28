@@ -2,7 +2,7 @@
 # Custom Storage Backend
 ################################################################################
 
-variable "backend_bucket_name" {
+variable "backend_bucketname" {
   description = "Bucket Name for storing state file."
   type        = string
 }
