@@ -4,7 +4,7 @@
 
 variable "backend_bucket_name" {
   description = "Bucket Name for storing state file."
-  type = string
+  type        = string
 }
 variable "backend_region" {
   description = "Region of the custom storage backend."
